@@ -28,6 +28,7 @@ class ISLoginViewController: UIViewController {
         
         do{
             try sigIn.signInUser()
+            self.performSegue(withIdentifier: "jumpToViewContollerFromLogin", sender: self)
         }catch let error{
             present(muestraVC("Lo sentimos",
                               messageData: "\(error.localizedDescription)"),
