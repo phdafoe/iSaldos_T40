@@ -51,6 +51,9 @@
 		8B7810481EC384BA0044A1D5 /* ISDetalleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810471EC384BA0044A1D5 /* ISDetalleTableViewController.swift */; };
 		8B78104A1EC384CF0044A1D5 /* ISCuponesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810491EC384CF0044A1D5 /* ISCuponesTableViewController.swift */; };
 		8B78104C1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78104B1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift */; };
+		8B78104E1EC3A1700044A1D5 /* ISAsociadoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78104D1EC3A1700044A1D5 /* ISAsociadoModel.swift */; };
+		8B7810501EC3A40F0044A1D5 /* ISPromocionesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78104F1EC3A40F0044A1D5 /* ISPromocionesModel.swift */; };
+		8B7810521EC3A5EA0044A1D5 /* ISParserPromociones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810511EC3A5EA0044A1D5 /* ISParserPromociones.swift */; };
 		8B9903581EC0DDDC006DFF2B /* ISSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9903571EC0DDDC006DFF2B /* ISSplashViewController.swift */; };
 		8B99035A1EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9903591EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift */; };
 		8B99035C1EC0E510006DFF2B /* ISLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99035B1EC0E510006DFF2B /* ISLoginViewController.swift */; };
@@ -118,6 +121,9 @@
 		8B7810471EC384BA0044A1D5 /* ISDetalleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISDetalleTableViewController.swift; sourceTree = "<group>"; };
 		8B7810491EC384CF0044A1D5 /* ISCuponesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISCuponesTableViewController.swift; sourceTree = "<group>"; };
 		8B78104B1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISDetalleCuponesTableViewController.swift; sourceTree = "<group>"; };
+		8B78104D1EC3A1700044A1D5 /* ISAsociadoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISAsociadoModel.swift; sourceTree = "<group>"; };
+		8B78104F1EC3A40F0044A1D5 /* ISPromocionesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISPromocionesModel.swift; sourceTree = "<group>"; };
+		8B7810511EC3A5EA0044A1D5 /* ISParserPromociones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISParserPromociones.swift; sourceTree = "<group>"; };
 		8B9903571EC0DDDC006DFF2B /* ISSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSplashViewController.swift; sourceTree = "<group>"; };
 		8B9903591EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISGaleriaTutorialViewController.swift; sourceTree = "<group>"; };
 		8B99035B1EC0E510006DFF2B /* ISLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISLoginViewController.swift; sourceTree = "<group>"; };
@@ -319,6 +325,8 @@
 			children = (
 				8B99035F1EC0ED27006DFF2B /* ISEnumerator.swift */,
 				8B9903611EC0EE42006DFF2B /* ISSignIn.swift */,
+				8B78104D1EC3A1700044A1D5 /* ISAsociadoModel.swift */,
+				8B78104F1EC3A40F0044A1D5 /* ISPromocionesModel.swift */,
 			);
 			name = MODELS;
 			sourceTree = "<group>";
@@ -326,6 +334,7 @@
 		412742311E9FC6810074CDD7 /* PARSERS */ = {
 			isa = PBXGroup;
 			children = (
+				8B7810511EC3A5EA0044A1D5 /* ISParserPromociones.swift */,
 			);
 			name = PARSERS;
 			sourceTree = "<group>";
@@ -528,11 +537,13 @@
 				412741E71E9FBF230074CDD7 /* CarbonTabSwipeScrollView.m in Sources */,
 				8B78104C1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift in Sources */,
 				8B7810461EC384A20044A1D5 /* ISOfertasTableViewController.swift in Sources */,
+				8B7810521EC3A5EA0044A1D5 /* ISParserPromociones.swift in Sources */,
 				412741FB1E9FC14C0074CDD7 /* ISOfertaCustomCell.swift in Sources */,
 				8B9903621EC0EE42006DFF2B /* ISSignIn.swift in Sources */,
 				8B99035A1EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift in Sources */,
 				41A3BBFF1EA1312900FC491F /* SRMiPerfilCustomCell.swift in Sources */,
 				8B7810441EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift in Sources */,
+				8B78104E1EC3A1700044A1D5 /* ISAsociadoModel.swift in Sources */,
 				8B99035E1EC0E536006DFF2B /* ISregistroUsuarioTableViewController.swift in Sources */,
 				412741B51E9F93B20074CDD7 /* AppDelegate.swift in Sources */,
 				8B7810421EC3829E0044A1D5 /* ISHomeTabBarViewController.swift in Sources */,
@@ -547,6 +558,7 @@
 				8B9C693D1EBA6B4B001E86EA /* APIHELPERS.swift in Sources */,
 				B45B0E271EB8E3670038D174 /* ISPostCustomCell.swift in Sources */,
 				4127420F1E9FC3800074CDD7 /* ISHomeViewController.swift in Sources */,
+				8B7810501EC3A40F0044A1D5 /* ISPromocionesModel.swift in Sources */,
 				412741E51E9FBF230074CDD7 /* CarbonSwipeRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
