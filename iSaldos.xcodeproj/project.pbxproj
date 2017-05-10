@@ -44,6 +44,13 @@
 		41A3BBFF1EA1312900FC491F /* SRMiPerfilCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A3BBFD1EA1312900FC491F /* SRMiPerfilCustomCell.swift */; };
 		41A3BC001EA1312900FC491F /* SRMiPerfilCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A3BBFE1EA1312900FC491F /* SRMiPerfilCustomCell.xib */; };
 		5A6D0BCA5E107D272AC036F5 /* Pods_iSaldos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F140B6E052B1C95D61762DD6 /* Pods_iSaldos.framework */; };
+		8B7810401EC382370044A1D5 /* ISMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */; };
+		8B7810421EC3829E0044A1D5 /* ISHomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */; };
+		8B7810441EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */; };
+		8B7810461EC384A20044A1D5 /* ISOfertasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810451EC384A20044A1D5 /* ISOfertasTableViewController.swift */; };
+		8B7810481EC384BA0044A1D5 /* ISDetalleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810471EC384BA0044A1D5 /* ISDetalleTableViewController.swift */; };
+		8B78104A1EC384CF0044A1D5 /* ISCuponesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810491EC384CF0044A1D5 /* ISCuponesTableViewController.swift */; };
+		8B78104C1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78104B1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift */; };
 		8B9903581EC0DDDC006DFF2B /* ISSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9903571EC0DDDC006DFF2B /* ISSplashViewController.swift */; };
 		8B99035A1EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9903591EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift */; };
 		8B99035C1EC0E510006DFF2B /* ISLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B99035B1EC0E510006DFF2B /* ISLoginViewController.swift */; };
@@ -104,6 +111,13 @@
 		41A3BBFB1EA0EC0600FC491F /* RateApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateApp.swift; sourceTree = "<group>"; };
 		41A3BBFD1EA1312900FC491F /* SRMiPerfilCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRMiPerfilCustomCell.swift; sourceTree = "<group>"; };
 		41A3BBFE1EA1312900FC491F /* SRMiPerfilCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRMiPerfilCustomCell.xib; sourceTree = "<group>"; };
+		8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISMenuTableViewController.swift; sourceTree = "<group>"; };
+		8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISHomeTabBarViewController.swift; sourceTree = "<group>"; };
+		8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISTerminasYCondicionesViewController.swift; sourceTree = "<group>"; };
+		8B7810451EC384A20044A1D5 /* ISOfertasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISOfertasTableViewController.swift; sourceTree = "<group>"; };
+		8B7810471EC384BA0044A1D5 /* ISDetalleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISDetalleTableViewController.swift; sourceTree = "<group>"; };
+		8B7810491EC384CF0044A1D5 /* ISCuponesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISCuponesTableViewController.swift; sourceTree = "<group>"; };
+		8B78104B1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISDetalleCuponesTableViewController.swift; sourceTree = "<group>"; };
 		8B9903571EC0DDDC006DFF2B /* ISSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISSplashViewController.swift; sourceTree = "<group>"; };
 		8B9903591EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISGaleriaTutorialViewController.swift; sourceTree = "<group>"; };
 		8B99035B1EC0E510006DFF2B /* ISLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISLoginViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +248,9 @@
 				412741FF1E9FC1680074CDD7 /* OFERTAS */,
 				412742061E9FC19D0074CDD7 /* CUPONES */,
 				4127420D1E9FC1C60074CDD7 /* CONCURSOS */,
+				8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */,
+				8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */,
+				8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */,
 			);
 			name = VIEWS_CONTROLLERS;
 			sourceTree = "<group>";
@@ -252,6 +269,8 @@
 		412741FF1E9FC1680074CDD7 /* OFERTAS */ = {
 			isa = PBXGroup;
 			children = (
+				8B7810451EC384A20044A1D5 /* ISOfertasTableViewController.swift */,
+				8B7810471EC384BA0044A1D5 /* ISDetalleTableViewController.swift */,
 				412741F91E9FC14C0074CDD7 /* ISOfertaCustomCell.swift */,
 				412741FA1E9FC14C0074CDD7 /* ISOfertaCustomCell.xib */,
 			);
@@ -261,6 +280,8 @@
 		412742061E9FC19D0074CDD7 /* CUPONES */ = {
 			isa = PBXGroup;
 			children = (
+				8B7810491EC384CF0044A1D5 /* ISCuponesTableViewController.swift */,
+				8B78104B1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift */,
 			);
 			name = CUPONES;
 			sourceTree = "<group>";
@@ -501,21 +522,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				412741E61E9FBF230074CDD7 /* CarbonTabSwipeNavigation.m in Sources */,
+				8B78104A1EC384CF0044A1D5 /* ISCuponesTableViewController.swift in Sources */,
 				8B99035C1EC0E510006DFF2B /* ISLoginViewController.swift in Sources */,
 				8B9903581EC0DDDC006DFF2B /* ISSplashViewController.swift in Sources */,
 				412741E71E9FBF230074CDD7 /* CarbonTabSwipeScrollView.m in Sources */,
+				8B78104C1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift in Sources */,
+				8B7810461EC384A20044A1D5 /* ISOfertasTableViewController.swift in Sources */,
 				412741FB1E9FC14C0074CDD7 /* ISOfertaCustomCell.swift in Sources */,
 				8B9903621EC0EE42006DFF2B /* ISSignIn.swift in Sources */,
 				8B99035A1EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift in Sources */,
 				41A3BBFF1EA1312900FC491F /* SRMiPerfilCustomCell.swift in Sources */,
+				8B7810441EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift in Sources */,
 				8B99035E1EC0E536006DFF2B /* ISregistroUsuarioTableViewController.swift in Sources */,
 				412741B51E9F93B20074CDD7 /* AppDelegate.swift in Sources */,
+				8B7810421EC3829E0044A1D5 /* ISHomeTabBarViewController.swift in Sources */,
 				412741DA1E9F984B0074CDD7 /* SWRevealViewController.m in Sources */,
 				8B9903601EC0ED27006DFF2B /* ISEnumerator.swift in Sources */,
+				8B7810401EC382370044A1D5 /* ISMenuTableViewController.swift in Sources */,
 				412741E81E9FBF230074CDD7 /* CarbonTabSwipeSegmentedControl.m in Sources */,
 				415101891EB8C371003B016D /* ISUsuariosCustomCell.swift in Sources */,
 				8B9C693B1EBA68B7001E86EA /* APIUTILS.swift in Sources */,
 				41A3BBFC1EA0EC0600FC491F /* RateApp.swift in Sources */,
+				8B7810481EC384BA0044A1D5 /* ISDetalleTableViewController.swift in Sources */,
 				8B9C693D1EBA6B4B001E86EA /* APIHELPERS.swift in Sources */,
 				B45B0E271EB8E3670038D174 /* ISPostCustomCell.swift in Sources */,
 				4127420F1E9FC3800074CDD7 /* ISHomeViewController.swift in Sources */,
