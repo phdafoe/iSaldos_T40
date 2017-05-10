@@ -88,7 +88,6 @@ func goToRate(_ view: UIViewController) {
     })
     
     openStoreAlert.addAction(openStoreAction)
-    
     view.present(openStoreAlert, animated: true, completion: nil)
 }
 

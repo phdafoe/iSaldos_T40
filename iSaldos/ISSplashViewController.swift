@@ -63,9 +63,10 @@ class ISSplashViewController: UIViewController {
                 loginVC.modalTransitionStyle = .crossDissolve
                 present(loginVC, animated: true, completion: nil)
             }else{
-                let revealVC = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                let revealVC = self.storyboard?.instantiateViewController(withIdentifier: "RevealViewController") as! SWRevealViewController
                 revealVC.modalTransitionStyle = .crossDissolve
                 present(revealVC, animated: true, completion: nil)
+
             }
         }else{
             customPrefes.setValue("OK", forKey: CONSTANTES.USER_DEFAULT.VISTA_GALERIA_INICIAL)

@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: configuration)
         
         personalizaUI()
+        
         return true
         
         

@@ -7,89 +7,133 @@
 //
 
 import UIKit
+import Parse
+import MessageUI
 
 class ISMenuTableViewController: UITableViewController {
-
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var myImageProfile: UIImageView!
+    @IBOutlet weak var myNombreProfile: UILabel!
+    @IBOutlet weak var myApellidoProfile: UILabel!
+    @IBOutlet weak var myEmailProfile: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        myImageProfile.layer.cornerRadius = myImageProfile.frame.width / 2
+        myImageProfile.layer.borderColor = CONSTANTES.COLORES.GRIS_NAV_TAB.cgColor
+        myImageProfile.layer.borderWidth = 1
+        myImageProfile.clipsToBounds = true
+        
+        dameInformacionParse()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1{
+            switch indexPath.row {
+                case 2:
+                    sendMessage()
+                case 3:
+                    showRateAlertInmediatly(self)
+                case 4:
+                    logout()
+                default:
+                    break
+            }
+        }
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    
+    
+    //MARK: - Utils
+    func logout(){
+        PFUser.logOutInBackground()
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    func sendMessage(){
+        let mailComposeVC = configuredMailComposeVC()
+        mailComposeVC.mailComposeDelegate = self
+        if MFMailComposeViewController.canSendMail(){
+            present(mailComposeVC,
+                    animated: true,
+                    completion: nil)
+        }else{
+            present(muestraVC("Atención",
+                              messageData: "El mail no se enviado correctamente"),
+                    animated: true,
+                    completion: nil)
+        }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func dameInformacionParse(){
+        //1.primera consulta
+        let queryUser = PFUser.query()
+        queryUser?.whereKey("username", equalTo: (PFUser.current()?.username)!)
+        queryUser?.findObjectsInBackground(block: { (objectBusqueda, errorBusqueda) in
+            if errorBusqueda == nil{
+                if let objectData = objectBusqueda?[0]{
+                    self.myNombreProfile.text = objectData["nombre"] as? String
+                    self.myApellidoProfile.text = objectData["apellido"] as? String
+                    self.myEmailProfile.text = objectData["email"] as? String
+                    //2. segunda consulta
+                    let queryFoto = PFQuery(className: "ImageProfile")
+                    queryFoto.whereKey("username", equalTo: (PFUser.current()?.username)!)
+                    queryFoto.findObjectsInBackground(block: { (objectBusquedaFoto, errorBusquedaFoto) in
+                        if errorBusquedaFoto == nil{
+                            if let objectBusquedaData = objectBusquedaFoto?[0]{
+                                //3. obtencion de data para pintar la imagen del usuario
+                                let userImageFile = objectBusquedaData["imageProfile"] as! PFFile
+                                userImageFile.getDataInBackground(block: { (imageData, errorData) in
+                                    if errorData == nil{
+                                        if let data = imageData{
+                                            let imageDataFinal = UIImage(data: data)
+                                            self.myImageProfile.image = imageDataFinal
+                                        }
+                                    }else{
+                                        print("no tenemos imagen")
+                                    }
+                                })
+                            }
+                        }else{
+                            print("Error:\(errorBusquedaFoto?.localizedDescription) ")
+                        }
+                    })
+                }
+            }else{
+               self.present(muestraVC("Atención",
+                                      messageData: "Ha ocurrido un problema buscando  en la base de datos"),
+                            animated: true,
+                            completion: nil)
+            }
+        })
     }
-    */
+    
+    
+}// fin de la clase
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+extension ISMenuTableViewController : MFMailComposeViewControllerDelegate{
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult,
+                               error: Error?) {
+        
+        controller.dismiss(animated: true,
+                           completion: nil)
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
