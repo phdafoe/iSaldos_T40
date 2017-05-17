@@ -27,13 +27,30 @@ func configuredMailComposeVC() -> MFMailComposeViewController{
     return mailCompose
 }
 
-public func dimeString(_ json : JSON, nombre : String) -> String{
+func dimeString(_ json : JSON, nombre : String) -> String{
     if let stringResult = json[nombre].string{
         return stringResult
     }else{
         return ""
     }
 }
+
+
+func getImagePath(_ type: String, id: String!, name: String!) -> String{
+    return CONSTANTES.LLAMADAS.BASE_PHOTO_URL + id + "/" + name
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

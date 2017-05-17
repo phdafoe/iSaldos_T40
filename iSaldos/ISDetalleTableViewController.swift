@@ -9,6 +9,12 @@
 import UIKit
 
 class ISDetalleTableViewController: UITableViewController {
+    
+    //MARK: - Variables locales
+    var oferta : ISPromocionesModel?
+    var detalleImagenData : UIImage?
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

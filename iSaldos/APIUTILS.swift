@@ -27,10 +27,10 @@ struct LLamadas {
     let CUPONES = "cupones"
     let PROMOCIONES_SERVICE = "promociones"
     
-    let BASE_PHOTO_URL = "http://app.clubsinergias.es/uploads/promociones"
+    let BASE_PHOTO_URL = "http://app.clubsinergias.es/uploads/promociones/"
     let BASE_URL = "http://app.clubsinergias.es/api_comercios.php?"
     let BASE_URL_ID_CLIENTE = "http://app.clubsinergias.es/api_comercios.php?idcliente="
-    let BASE_ID_LOCALIDAD = "idLocalidad="
+    let BASE_ID_LOCALIDAD = "idlocalidad="
     let BASE_ID_P = "&p="
     let BASE_ID_TIPO = "&tipo="
     

@@ -29,20 +29,35 @@ class ISParserPromociones: NSObject {
     }
     
     
+    func getParserPromociones() -> [ISPromocionesModel]{
+        var arrayPromociones = [ISPromocionesModel]()
+        
+        for c_promocion in (jsonDataPromociones?["promociones"])!{
+            let asociadoModel = ISAsociadoModel(pId: dimeString(c_promocion.1["asociado"], nombre: "id"),
+                                                pNombre: dimeString(c_promocion.1["asociado"], nombre: "nombre"),
+                                                pDescripcion: dimeString(c_promocion.1["asociado"], nombre: "descripcion"),
+                                                pCondicionesEspeciales: dimeString(c_promocion.1["asociado"], nombre: "condicionesEspeciales"),
+                                                pDireccion: dimeString(c_promocion.1["asociado"], nombre: "direccion"),
+                                                pIdActividad: dimeString(c_promocion.1["asociado"], nombre: "idActividad"),
+                                                pIdLocalidad: dimeString(c_promocion.1["asociado"], nombre: "idLocalidad"),
+                                                pImagen: dimeString(c_promocion.1["asociado"], nombre: "imagen"),
+                                                pTelefonoFijo: dimeString(c_promocion.1["asociado"], nombre: "telefonoFijo"),
+                                                pTelefonoMovil: dimeString(c_promocion.1["asociado"], nombre: "telefonoMovil"),
+                                                pMail: dimeString(c_promocion.1["asociado"], nombre: "mail"),
+                                                pWeb: dimeString(c_promocion.1["asociado"], nombre: "web"))
+            
+            let promocionesModel = ISPromocionesModel(pId: dimeString(c_promocion.1, nombre: "id"),
+                                                      pTipoPromocion: dimeString(c_promocion.1, nombre: "tipoPromocion"),
+                                                      pNombre: dimeString(c_promocion.1, nombre: "nombre"),
+                                                      pImporte: dimeString(c_promocion.1, nombre: "importe"),
+                                                      pImagen: dimeString(c_promocion.1, nombre: "imagen"),
+                                                      pFechaFin: dimeString(c_promocion.1, nombre: "fechaFin"),
+                                                      pMasInformacion: dimeString(c_promocion.1, nombre: "masInformacion"),
+                                                      pAsociado: asociadoModel)
+            arrayPromociones.append(promocionesModel)
+        }
+        return arrayPromociones
+    }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }

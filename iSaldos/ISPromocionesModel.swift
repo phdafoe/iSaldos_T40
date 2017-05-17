@@ -32,7 +32,7 @@ class ISPromocionesModel: NSObject {
         self.tipoPromocion = pTipoPromocion
         self.nombre = pNombre
         self.importe = pImporte
-        self.importe = pImagen
+        self.imagen = pImagen
         self.fechaFin = pFechaFin
         self.masInformacion = pMasInformacion
         self.asociado = pAsociado
