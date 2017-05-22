@@ -16,7 +16,7 @@ enum CustomError : Error {
 }
 
 extension CustomError : LocalizedError{
-    var errorDescription: String{
+    public var errorDescription: String?{
         switch self {
         case .campoVacio:
             return "Ingrese todos los campos"

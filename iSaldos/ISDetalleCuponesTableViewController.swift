@@ -20,6 +20,7 @@ class ISDetalleCuponesTableViewController: UITableViewController {
     var qrData : String?
     var codeBarData : String?
     var qrCodeImage : CIImage?
+    var imageGroupTag = 3
     
     //MARK: - IBOUtlets
     
@@ -40,21 +41,73 @@ class ISDetalleCuponesTableViewController: UITableViewController {
     
     //MARK: - IBActions
     @IBAction func hacerLLamadaTelefonica(_ sender: Any) {
-        
-        
+        let stringUno = myTelefonoFijoAsociadoCupon.titleLabel?.text
+        let phoneUrl = URL(string: String(format: "telprompt:%@", stringUno!))!
+        if UIApplication.shared.canOpenURL(phoneUrl){
+            UIApplication.shared.open(phoneUrl, options: [:], completionHandler: nil)
+        }else{
+            present(muestraVC("Atención",
+                              messageData: "numero de telefono no disponible"),
+                    animated: true,
+                    completion: nil)
+        }
     }
     
     
     @IBAction func visitarPaginaWebAsociado(_ sender: Any) {
-        
-        
-        
+        let stringUno = myWebAsociadoCupon.titleLabel?.text
+        let webVC = self.storyboard?.instantiateViewController(withIdentifier: "ISWebViewController") as! ISWebViewController
+        webVC.urlWeb = stringUno
+        present(webVC, animated: true, completion: nil)
     }
+    
+    
+    
     
     @IBAction func creacionCB_QR(_ sender: Any) {
         
+        let customBackground = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height * 2))
+        customBackground.backgroundColor = CONSTANTES.COLORES.GRIS_NAV_TAB
+        customBackground.alpha = 0.5
+        customBackground.tag = imageGroupTag
+        self.view.addSubview(customBackground)
         
+        if myIdActividadAsociadoCupon.text == qrData{
+            let anchoImagen = self.view.frame.width / 1.3
+            let altoImagen = self.view.frame.height / 3
+            
+            let imageView = UIImageView(frame: CGRect(x: (self.view.frame.width / 2 - anchoImagen / 2),
+                                                      y: (self.view.frame.height / 2 - altoImagen / 2),
+                                                      width: anchoImagen,
+                                                      height: altoImagen))
+            imageView.contentMode = .scaleAspectFit
+            imageView.tag = imageGroupTag
+            imageView.image = fromString(qrData!)
+            self.view.addSubview(imageView)
+            
+        }else{
+            //Aqui podeís decirle al usuario algo
+        }
         
+        let tapGR = UITapGestureRecognizer(target: self,
+                                           action: #selector(ocultaView(_:)))
+        view.addGestureRecognizer(tapGR)
+        
+    }
+    
+    func fromString(_ string : String) -> UIImage?{
+        let data = string.data(using: String.Encoding.ascii)
+        let filter = CIFilter(name: "CICode128BarcodeGenerator")
+        filter!.setValue(data, forKey: "inputMessage")
+        return UIImage(ciImage: filter!.outputImage!)
+    }
+    
+    func ocultaView(_ gesto : UITapGestureRecognizer){
+        for c_subview in self.view.subviews{
+            if c_subview.tag == self.imageGroupTag{
+                c_subview.removeFromSuperview()
+            }
+        }
     }
     
     
@@ -82,19 +135,17 @@ class ISDetalleCuponesTableViewController: UITableViewController {
         myInformacionCupon.text = cupon?.masInformacion
         myNombreAsociadoCupon.text = cupon?.asociado?.nombre
         myDescripcionAsociadoCupon.text = cupon?.asociado?.descripcion
+        
         myTelefonoFijoAsociadoCupon.setTitle(cupon?.asociado?.telefonoFijo, for: .normal)
+        
         myTelefonoMovilAsociadoCupon.text = cupon?.asociado?.telefonoMovil
+        
         myWebAsociadoCupon.setTitle(cupon?.asociado?.web, for: .normal)
+        
         myemailAsociadoCupon.text = cupon?.asociado?.mail
         myIdActividadAsociadoCupon.text = cupon?.asociado?.idActividad
         
-        //qrData =
-        
-        
-        
-        
-        
-
+        qrData = cupon?.asociado?.idActividad
         
     }
 
@@ -105,20 +156,6 @@ class ISDetalleCuponesTableViewController: UITableViewController {
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     
 
 }

@@ -24,7 +24,7 @@ struct Colores {
 
 struct LLamadas {
     let OFERTAS = "oferta"
-    let CUPONES = "cupones"
+    let CUPONES = "cupon"
     let PROMOCIONES_SERVICE = "promociones"
     
     let BASE_PHOTO_URL = "http://app.clubsinergias.es/uploads/promociones/"
