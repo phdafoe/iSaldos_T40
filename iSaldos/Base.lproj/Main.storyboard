@@ -1295,6 +1295,7 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="menuButton" destination="hlV-Wd-xm1" id="JN3-gK-A8s"/>
                         <segue destination="qzt-0p-lkA" kind="show" identifier="showCuponSegue" id="TDe-s4-e1w"/>
                     </connections>
                 </tableViewController>
@@ -1652,13 +1653,6 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="113"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="91 226 00 21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07d-kf-XSS">
-                                                    <rect key="frame" x="58" y="8" width="129" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fijo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voW-gV-M4F">
                                                     <rect key="frame" x="8" y="8" width="45" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1675,13 +1669,6 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movil:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qho-fa-uJp">
                                                     <rect key="frame" x="8" y="31" width="45" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="www.cemvalderas.es" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1O-UD-J3P">
-                                                    <rect key="frame" x="58" y="54" width="163" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1708,6 +1695,26 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-Dl-1Uz">
+                                                    <rect key="frame" x="58" y="6" width="117" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                                    <state key="normal" title="91 226 00 21">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="hacerLLamadaTelefonica:" destination="qzt-0p-lkA" eventType="touchUpInside" id="ty3-yq-HMf"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36K-7M-BVY">
+                                                    <rect key="frame" x="58" y="50" width="248" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="16"/>
+                                                    <state key="normal" title="www.cemvalderas.es"/>
+                                                    <connections>
+                                                        <action selector="visitarPaginaWebAsociado:" destination="qzt-0p-lkA" eventType="touchUpInside" id="l31-tz-cnB"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1724,7 +1731,7 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" backgroundImage="qr"/>
                                                     <connections>
-                                                        <action selector="qrACTION:" destination="qzt-0p-lkA" eventType="touchUpInside" id="EEv-Ff-ido"/>
+                                                        <action selector="creacionCB_QR:" destination="qzt-0p-lkA" eventType="touchUpInside" id="52D-3m-9SJ"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Numero de Socio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fw5-Rf-YYi">
@@ -1757,24 +1764,24 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                     <navigationItem key="navigationItem" id="pms-Vz-fbo">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="T2m-BX-ZTm">
                             <connections>
-                                <action selector="shareSocialNetworkACTION:" destination="qzt-0p-lkA" id="pLo-yV-E34"/>
+                                <action selector="muestraActionSheetPersonalizado:" destination="qzt-0p-lkA" id="L0e-n3-yyH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="myDescripcionAsociado" destination="4u9-L9-ZOD" id="exg-Mc-F7V"/>
-                        <outlet property="myDireccionAsociado" destination="bRG-LF-x24" id="ZqG-RJ-bSt"/>
-                        <outlet property="myEmailAsociado" destination="a9d-rI-NvC" id="GMv-wQ-A7Z"/>
-                        <outlet property="myFechaOferta" destination="fjH-Dv-ole" id="OpD-W0-T6H"/>
-                        <outlet property="myFijoAsociado" destination="07d-kf-XSS" id="XLg-t1-PJ6"/>
-                        <outlet property="myIdActividad" destination="6hx-zq-8xt" id="BSG-YT-uAw"/>
-                        <outlet property="myImagenOferta" destination="Tff-ej-Lmj" id="zHq-bY-wJA"/>
-                        <outlet property="myInformacionOferta" destination="26I-zK-I3B" id="TCs-8e-QSV"/>
-                        <outlet property="myMovilAsociado" destination="ebM-eD-Hwd" id="EG7-1H-hVF"/>
-                        <outlet property="myNombreAsociado" destination="tfE-OP-kqW" id="6Cs-me-QbG"/>
-                        <outlet property="myNombreOferta" destination="7re-eL-W1e" id="rdt-BY-tN4"/>
-                        <outlet property="myWebAsociado" destination="i1O-UD-J3P" id="FIq-Mi-74p"/>
+                        <outlet property="myDescripcionAsociadoCupon" destination="4u9-L9-ZOD" id="21U-1M-5kG"/>
+                        <outlet property="myDireccionAsociadoCupon" destination="bRG-LF-x24" id="xt1-YG-b84"/>
+                        <outlet property="myFechaCupon" destination="fjH-Dv-ole" id="KkI-kh-48X"/>
+                        <outlet property="myIdActividadAsociadoCupon" destination="6hx-zq-8xt" id="49w-Xg-GGz"/>
+                        <outlet property="myImageCupon" destination="Tff-ej-Lmj" id="cYG-HK-lDe"/>
+                        <outlet property="myInformacionCupon" destination="26I-zK-I3B" id="uDT-gd-XnU"/>
+                        <outlet property="myNombreAsociadoCupon" destination="tfE-OP-kqW" id="Wfj-mz-Rwt"/>
+                        <outlet property="myNombreCupon" destination="7re-eL-W1e" id="ndV-36-O75"/>
+                        <outlet property="myTelefonoFijoAsociadoCupon" destination="Fc3-Dl-1Uz" id="1TQ-lw-m6i"/>
+                        <outlet property="myTelefonoMovilAsociadoCupon" destination="ebM-eD-Hwd" id="5ic-pe-6vc"/>
+                        <outlet property="myWebAsociadoCupon" destination="36K-7M-BVY" id="no9-uV-SRe"/>
+                        <outlet property="myemailAsociadoCupon" destination="a9d-rI-NvC" id="By7-zD-F98"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFl-aC-do9" userLabel="First Responder" sceneMemberID="firstResponder"/>

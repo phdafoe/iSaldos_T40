@@ -29,11 +29,8 @@ class APISignIn: NSObject {
     }
     
     func camposVacios() -> Bool{
-        if !(username?.isEmpty)! && !(password?.isEmpty)!{
-            return true
-        }else{
-            return false
-        }
+        
+        return !(username?.isEmpty)! && !(password?.isEmpty)!
     }
     
     func validarDatosUsuario() -> Bool{
@@ -42,10 +39,15 @@ class APISignIn: NSObject {
         }catch let error{
             print("Error: \(error.localizedDescription)")
         }
-        if PFUser.current() != nil{
-            return true
-        }else{
-            return false
-        }
+        
+        return (PFUser.current() != nil)
     }
+    
+    
+    
+    
+    
+    
+    
+    
 }

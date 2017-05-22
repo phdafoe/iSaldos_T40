@@ -7,17 +7,35 @@
 //
 
 import UIKit
+import PromiseKit
+import PKHUD
+import Kingfisher
 
 class ISCuponesTableViewController: UITableViewController {
+    
+    //MARK: - Variables locales
+    var arrayCupones = [ISPromocionesModel]()
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //TODO: - Llamada
+        llamadaCupones()
+        
+        //TODO:  - Menu superior Izq
+        if revealViewController() != nil{
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rightViewRevealWidth = 150
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        //TODO: - Registro de Nib
+        tableView.register(UINib(nibName: "ISOfertaCustomCell", bundle: nil), forCellReuseIdentifier: "ISOfertaCustomCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,67 +47,98 @@ class ISCuponesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return arrayCupones.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        
+        let customCellCupones = tableView.dequeueReusableCell(withIdentifier: "ISOfertaCustomCell", for: indexPath) as! ISOfertaCustomCell
+        
+        let model = arrayCupones[indexPath.row]
+        
+        customCellCupones.myNombreOferta.text = model.nombre
+        customCellCupones.myFechaOferta.text = model.fechaFin
+        customCellCupones.myInformacionOferta.text = model.masInformacion
+        customCellCupones.myImporteOferta.text = model.importe
+        
+        customCellCupones.myImagenOferta.kf.setImage(with: ImageResource(downloadURL: URL(string: getImagePath(CONSTANTES.LLAMADAS.CUPONES,
+                                                                                                              id: model.id,
+                                                                                                              name: model.imagen))!),
+                                                    placeholder: #imageLiteral(resourceName: "placeholder"),
+                                                    options: nil,
+                                                    progressBlock: nil,
+                                                    completionHandler: nil)
+        
+        return customCellCupones
     }
-    */
+    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 310
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showCuponSegue", sender: self)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showCuponSegue"{
+            let detalleVC = segue.destination as! ISDetalleCuponesTableViewController
+            let selectInd = tableView.indexPathForSelectedRow?.row
+            let objInd = arrayCupones[selectInd!]
+            detalleVC.cupon = objInd
+            
+            do{
+                let imageData = UIImage(data: try Data(contentsOf: URL(string: CONSTANTES.LLAMADAS.BASE_PHOTO_URL + (objInd.id)! + "/" + (objInd.imagen)!)!))
+                detalleVC.detalleImagenData = imageData!
+            }catch let error{
+                print("Error: \(error.localizedDescription)")
+            }
+            
+        }
     }
-    */
-
+    
+    //MARK: - Utils
+    func llamadaCupones(){
+        //instancia de la llamada (SINGLETON)
+        let datosCupones = ISParserPromociones()
+        //Parametros en la llamada
+        let idLocalidad = "11"
+        let tipoOferta = CONSTANTES.LLAMADAS.CUPONES
+        let tipoParametro = CONSTANTES.LLAMADAS.PROMOCIONES_SERVICE
+        HUD.show(.progress)
+        firstly {
+            return when(resolved: datosCupones.getDatosPromociones(idLocalidad,
+                                                                   idTipo: tipoOferta,
+                                                                   idParametro: tipoParametro))
+            }.then{_ in
+                self.arrayCupones = datosCupones.getParserPromociones()
+            }.then{_ in
+                self.tableView.reloadData()
+            }.then{_ in
+                HUD.hide(afterDelay: 0)
+            }.catch{error in
+                self.present(muestraVC("Lo sentimos",
+                                       messageData: error.localizedDescription),
+                             animated: true,
+                             completion: nil)
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
