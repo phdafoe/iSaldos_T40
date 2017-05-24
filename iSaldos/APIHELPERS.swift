@@ -41,6 +41,14 @@ func getImagePath(_ type: String, id: String!, name: String!) -> String{
 }
 
 
+public func fechaNasa(_ fecha : Date) -> String{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yyyy"
+    dateFormatter.locale = Locale(identifier: "es_ES")
+    return dateFormatter.string(from: fecha)
+}
+
+
 
 
 

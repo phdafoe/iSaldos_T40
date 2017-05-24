@@ -47,6 +47,9 @@
 		8B4218061ED5FA9D00FB5EA1 /* ActionSheetStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4218051ED5FA9D00FB5EA1 /* ActionSheetStoryboard.storyboard */; };
 		8B4218081ED5FBD600FB5EA1 /* ISActionPersonalizadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4218071ED5FBD600FB5EA1 /* ISActionPersonalizadoViewController.swift */; };
 		8B42180A1ED60A8400FB5EA1 /* ISNasaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4218091ED60A8400FB5EA1 /* ISNasaModel.swift */; };
+		8B42180C1ED60BF400FB5EA1 /* ISParserNasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42180B1ED60BF400FB5EA1 /* ISParserNasa.swift */; };
+		8B42180E1ED60F2100FB5EA1 /* ISNasaNoticiasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42180D1ED60F2100FB5EA1 /* ISNasaNoticiasTableViewController.swift */; };
+		8B4218101ED60F3400FB5EA1 /* ISNoticiaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42180F1ED60F3400FB5EA1 /* ISNoticiaTableViewController.swift */; };
 		8B7810401EC382370044A1D5 /* ISMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */; };
 		8B7810421EC3829E0044A1D5 /* ISHomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */; };
 		8B7810441EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */; };
@@ -121,6 +124,9 @@
 		8B4218051ED5FA9D00FB5EA1 /* ActionSheetStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActionSheetStoryboard.storyboard; sourceTree = "<group>"; };
 		8B4218071ED5FBD600FB5EA1 /* ISActionPersonalizadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISActionPersonalizadoViewController.swift; sourceTree = "<group>"; };
 		8B4218091ED60A8400FB5EA1 /* ISNasaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISNasaModel.swift; sourceTree = "<group>"; };
+		8B42180B1ED60BF400FB5EA1 /* ISParserNasa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISParserNasa.swift; sourceTree = "<group>"; };
+		8B42180D1ED60F2100FB5EA1 /* ISNasaNoticiasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISNasaNoticiasTableViewController.swift; sourceTree = "<group>"; };
+		8B42180F1ED60F3400FB5EA1 /* ISNoticiaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISNoticiaTableViewController.swift; sourceTree = "<group>"; };
 		8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISMenuTableViewController.swift; sourceTree = "<group>"; };
 		8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISHomeTabBarViewController.swift; sourceTree = "<group>"; };
 		8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISTerminasYCondicionesViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +312,8 @@
 		4127420D1E9FC1C60074CDD7 /* CONCURSOS */ = {
 			isa = PBXGroup;
 			children = (
+				8B42180D1ED60F2100FB5EA1 /* ISNasaNoticiasTableViewController.swift */,
+				8B42180F1ED60F3400FB5EA1 /* ISNoticiaTableViewController.swift */,
 			);
 			name = CONCURSOS;
 			sourceTree = "<group>";
@@ -347,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				8B7810511EC3A5EA0044A1D5 /* ISParserPromociones.swift */,
+				8B42180B1ED60BF400FB5EA1 /* ISParserNasa.swift */,
 			);
 			name = PARSERS;
 			sourceTree = "<group>";
@@ -558,6 +567,8 @@
 				8B99035A1EC0E283006DFF2B /* ISGaleriaTutorialViewController.swift in Sources */,
 				41A3BBFF1EA1312900FC491F /* SRMiPerfilCustomCell.swift in Sources */,
 				8B7810441EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift in Sources */,
+				8B42180E1ED60F2100FB5EA1 /* ISNasaNoticiasTableViewController.swift in Sources */,
+				8B4218101ED60F3400FB5EA1 /* ISNoticiaTableViewController.swift in Sources */,
 				8B78104E1EC3A1700044A1D5 /* ISAsociadoModel.swift in Sources */,
 				8B99035E1EC0E536006DFF2B /* ISregistroUsuarioTableViewController.swift in Sources */,
 				412741B51E9F93B20074CDD7 /* AppDelegate.swift in Sources */,
@@ -577,6 +588,7 @@
 				4127420F1E9FC3800074CDD7 /* ISHomeViewController.swift in Sources */,
 				8B7810501EC3A40F0044A1D5 /* ISPromocionesModel.swift in Sources */,
 				412741E51E9FBF230074CDD7 /* CarbonSwipeRefresh.m in Sources */,
+				8B42180C1ED60BF400FB5EA1 /* ISParserNasa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
