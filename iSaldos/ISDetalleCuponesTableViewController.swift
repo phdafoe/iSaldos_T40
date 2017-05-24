@@ -78,12 +78,32 @@ class ISDetalleCuponesTableViewController: UITableViewController {
         }
         custBackAnim.startAnimation()
         custBackAnim.addCompletion { _ in
-            //self.muestraImagenCB_QR()
+            self.muestraImagenCB_QR()
         }
         
+        let tapGR = UITapGestureRecognizer(target: self,
+                                           action: #selector(ocultaView(_:)))
+        view.addGestureRecognizer(tapGR)
         
-        
-        
+    }
+    
+    //MARK: - Utils
+    func fromString(_ string : String) -> UIImage?{
+        let data = string.data(using: String.Encoding.ascii)
+        let filter = CIFilter(name: "CICode128BarcodeGenerator")
+        filter!.setValue(data, forKey: "inputMessage")
+        return UIImage(ciImage: filter!.outputImage!)
+    }
+    
+    func ocultaView(_ gesto : UITapGestureRecognizer){
+        for c_subview in self.view.subviews{
+            if c_subview.tag == self.imageGroupTag{
+                c_subview.removeFromSuperview()
+            }
+        }
+    }
+    
+    func muestraImagenCB_QR(){
         if myIdActividadAsociadoCupon.text == qrData{
             let anchoImagen = self.view.frame.width / 1.3
             let altoImagen = self.view.frame.height / 3
@@ -100,36 +120,20 @@ class ISDetalleCuponesTableViewController: UITableViewController {
         }else{
             //Aqui podeís decirle al usuario algo
         }
-        
-        let tapGR = UITapGestureRecognizer(target: self,
-                                           action: #selector(ocultaView(_:)))
-        view.addGestureRecognizer(tapGR)
-        
-    }
-    
-    func fromString(_ string : String) -> UIImage?{
-        let data = string.data(using: String.Encoding.ascii)
-        let filter = CIFilter(name: "CICode128BarcodeGenerator")
-        filter!.setValue(data, forKey: "inputMessage")
-        return UIImage(ciImage: filter!.outputImage!)
-    }
-    
-    func ocultaView(_ gesto : UITapGestureRecognizer){
-        for c_subview in self.view.subviews{
-            if c_subview.tag == self.imageGroupTag{
-                c_subview.removeFromSuperview()
-            }
-        }
     }
     
     
     @IBAction func muestraActionSheetPersonalizado(_ sender: Any) {
-        
-        
-        
+        self.muestraStoryboard()
     }
     
-    
+    //MARK: - Utils
+    func muestraStoryboard(){
+        let stbData = UIStoryboard(name: "ActionSheetStoryboard", bundle: nil)
+        let actionSheetVC = stbData.instantiateInitialViewController()
+        actionSheetVC?.modalPresentationStyle = .overCurrentContext
+        show(actionSheetVC as! UINavigationController, sender: self)
+    }
     
     
 
