@@ -68,9 +68,21 @@ class ISDetalleCuponesTableViewController: UITableViewController {
         
         let customBackground = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height * 2))
         customBackground.backgroundColor = CONSTANTES.COLORES.GRIS_NAV_TAB
-        customBackground.alpha = 0.5
+        customBackground.alpha = 0.0
         customBackground.tag = imageGroupTag
-        self.view.addSubview(customBackground)
+        
+        let custBackAnim = UIViewPropertyAnimator(duration: 0.3,
+                                                  curve: .easeInOut) { 
+                                                    customBackground.alpha = 0.5
+                                                    self.view.addSubview(customBackground)
+        }
+        custBackAnim.startAnimation()
+        custBackAnim.addCompletion { _ in
+            //self.muestraImagenCB_QR()
+        }
+        
+        
+        
         
         if myIdActividadAsociadoCupon.text == qrData{
             let anchoImagen = self.view.frame.width / 1.3
