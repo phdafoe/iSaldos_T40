@@ -33,6 +33,7 @@ struct LLamadas {
     let BASE_ID_LOCALIDAD = "idlocalidad="
     let BASE_ID_P = "&p="
     let BASE_ID_TIPO = "&tipo="
+    let BASE_URL_NASA = "http://nasa.teamcl.com/api/noticias.php"
     
 }
 

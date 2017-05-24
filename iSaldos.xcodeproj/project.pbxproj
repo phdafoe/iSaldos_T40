@@ -46,6 +46,7 @@
 		5A6D0BCA5E107D272AC036F5 /* Pods_iSaldos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F140B6E052B1C95D61762DD6 /* Pods_iSaldos.framework */; };
 		8B4218061ED5FA9D00FB5EA1 /* ActionSheetStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4218051ED5FA9D00FB5EA1 /* ActionSheetStoryboard.storyboard */; };
 		8B4218081ED5FBD600FB5EA1 /* ISActionPersonalizadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4218071ED5FBD600FB5EA1 /* ISActionPersonalizadoViewController.swift */; };
+		8B42180A1ED60A8400FB5EA1 /* ISNasaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4218091ED60A8400FB5EA1 /* ISNasaModel.swift */; };
 		8B7810401EC382370044A1D5 /* ISMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */; };
 		8B7810421EC3829E0044A1D5 /* ISHomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */; };
 		8B7810441EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */; };
@@ -119,6 +120,7 @@
 		41A3BBFE1EA1312900FC491F /* SRMiPerfilCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRMiPerfilCustomCell.xib; sourceTree = "<group>"; };
 		8B4218051ED5FA9D00FB5EA1 /* ActionSheetStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ActionSheetStoryboard.storyboard; sourceTree = "<group>"; };
 		8B4218071ED5FBD600FB5EA1 /* ISActionPersonalizadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISActionPersonalizadoViewController.swift; sourceTree = "<group>"; };
+		8B4218091ED60A8400FB5EA1 /* ISNasaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISNasaModel.swift; sourceTree = "<group>"; };
 		8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISMenuTableViewController.swift; sourceTree = "<group>"; };
 		8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISHomeTabBarViewController.swift; sourceTree = "<group>"; };
 		8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISTerminasYCondicionesViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				8B9903611EC0EE42006DFF2B /* ISSignIn.swift */,
 				8B78104D1EC3A1700044A1D5 /* ISAsociadoModel.swift */,
 				8B78104F1EC3A40F0044A1D5 /* ISPromocionesModel.swift */,
+				8B4218091ED60A8400FB5EA1 /* ISNasaModel.swift */,
 			);
 			name = MODELS;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				8B4218081ED5FBD600FB5EA1 /* ISActionPersonalizadoViewController.swift in Sources */,
 				41A3BBFC1EA0EC0600FC491F /* RateApp.swift in Sources */,
 				8B7810481EC384BA0044A1D5 /* ISDetalleTableViewController.swift in Sources */,
+				8B42180A1ED60A8400FB5EA1 /* ISNasaModel.swift in Sources */,
 				8B9C693D1EBA6B4B001E86EA /* APIHELPERS.swift in Sources */,
 				B45B0E271EB8E3670038D174 /* ISPostCustomCell.swift in Sources */,
 				4127420F1E9FC3800074CDD7 /* ISHomeViewController.swift in Sources */,
