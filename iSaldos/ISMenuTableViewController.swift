@@ -97,17 +97,12 @@ class ISMenuTableViewController: UITableViewController {
                                     }
                                 })
                             }
-                        }else{
-                            print("Error:\(errorBusquedaFoto?.localizedDescription) ")
+                            self.tableView.reloadData()
                         }
                     })
                 }
-            }else{
-               self.present(muestraVC("Atención",
-                                      messageData: "Ha ocurrido un problema buscando  en la base de datos"),
-                            animated: true,
-                            completion: nil)
             }
+            self.tableView.reloadData()
         })
     }
     

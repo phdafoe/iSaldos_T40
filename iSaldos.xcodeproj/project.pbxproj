@@ -53,6 +53,9 @@
 		8B4355B11EDC92C9006B2E70 /* ISMuroSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4355B01EDC92C9006B2E70 /* ISMuroSocialViewController.swift */; };
 		8B4355B31EDC92E9006B2E70 /* ISCanalSocialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4355B21EDC92E9006B2E70 /* ISCanalSocialViewController.swift */; };
 		8B4355B51EDC930E006B2E70 /* ISNuevoPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4355B41EDC930E006B2E70 /* ISNuevoPostTableViewController.swift */; };
+		8B4355B71EDC9AE5006B2E70 /* UserPostImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4355B61EDC9AE5006B2E70 /* UserPostImage.swift */; };
+		8B4355B91EDCA632006B2E70 /* ISConfiguracionPerfilTableViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4355B81EDCA632006B2E70 /* ISConfiguracionPerfilTableViewControler.swift */; };
+		8B4355BB1EDCA6E3006B2E70 /* ISUsuariosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4355BA1EDCA6E3006B2E70 /* ISUsuariosTableViewController.swift */; };
 		8B7810401EC382370044A1D5 /* ISMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */; };
 		8B7810421EC3829E0044A1D5 /* ISHomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */; };
 		8B7810441EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */; };
@@ -133,6 +136,9 @@
 		8B4355B01EDC92C9006B2E70 /* ISMuroSocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISMuroSocialViewController.swift; sourceTree = "<group>"; };
 		8B4355B21EDC92E9006B2E70 /* ISCanalSocialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISCanalSocialViewController.swift; sourceTree = "<group>"; };
 		8B4355B41EDC930E006B2E70 /* ISNuevoPostTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISNuevoPostTableViewController.swift; sourceTree = "<group>"; };
+		8B4355B61EDC9AE5006B2E70 /* UserPostImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostImage.swift; sourceTree = "<group>"; };
+		8B4355B81EDCA632006B2E70 /* ISConfiguracionPerfilTableViewControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISConfiguracionPerfilTableViewControler.swift; sourceTree = "<group>"; };
+		8B4355BA1EDCA6E3006B2E70 /* ISUsuariosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISUsuariosTableViewController.swift; sourceTree = "<group>"; };
 		8B78103F1EC382370044A1D5 /* ISMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISMenuTableViewController.swift; sourceTree = "<group>"; };
 		8B7810411EC3829E0044A1D5 /* ISHomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISHomeTabBarViewController.swift; sourceTree = "<group>"; };
 		8B7810431EC382B90044A1D5 /* ISTerminasYCondicionesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISTerminasYCondicionesViewController.swift; sourceTree = "<group>"; };
@@ -353,6 +359,7 @@
 				8B78104D1EC3A1700044A1D5 /* ISAsociadoModel.swift */,
 				8B78104F1EC3A40F0044A1D5 /* ISPromocionesModel.swift */,
 				8B4218091ED60A8400FB5EA1 /* ISNasaModel.swift */,
+				8B4355B61EDC9AE5006B2E70 /* UserPostImage.swift */,
 			);
 			name = MODELS;
 			sourceTree = "<group>";
@@ -409,6 +416,8 @@
 				B45B0E261EB8E3670038D174 /* ISPostCustomCell.xib */,
 				8B4355B01EDC92C9006B2E70 /* ISMuroSocialViewController.swift */,
 				8B4355B21EDC92E9006B2E70 /* ISCanalSocialViewController.swift */,
+				8B4355BA1EDCA6E3006B2E70 /* ISUsuariosTableViewController.swift */,
+				8B4355B81EDCA632006B2E70 /* ISConfiguracionPerfilTableViewControler.swift */,
 				8B4355B41EDC930E006B2E70 /* ISNuevoPostTableViewController.swift */,
 			);
 			name = "CANAL/ MURO";
@@ -564,10 +573,13 @@
 			files = (
 				412741E61E9FBF230074CDD7 /* CarbonTabSwipeNavigation.m in Sources */,
 				8B78104A1EC384CF0044A1D5 /* ISCuponesTableViewController.swift in Sources */,
+				8B4355BB1EDCA6E3006B2E70 /* ISUsuariosTableViewController.swift in Sources */,
+				8B4355B91EDCA632006B2E70 /* ISConfiguracionPerfilTableViewControler.swift in Sources */,
 				8B99035C1EC0E510006DFF2B /* ISLoginViewController.swift in Sources */,
 				8B9903581EC0DDDC006DFF2B /* ISSplashViewController.swift in Sources */,
 				412741E71E9FBF230074CDD7 /* CarbonTabSwipeScrollView.m in Sources */,
 				8B78104C1EC384E90044A1D5 /* ISDetalleCuponesTableViewController.swift in Sources */,
+				8B4355B71EDC9AE5006B2E70 /* UserPostImage.swift in Sources */,
 				8B7810461EC384A20044A1D5 /* ISOfertasTableViewController.swift in Sources */,
 				8B7810521EC3A5EA0044A1D5 /* ISParserPromociones.swift in Sources */,
 				8BFF50441ED3687A00FE5220 /* ISWebViewController.swift in Sources */,

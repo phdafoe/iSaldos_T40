@@ -9,6 +9,14 @@
 import UIKit
 
 class ISNuevoPostTableViewController: UITableViewController {
+    
+    
+    
+    @IBAction func hideVC(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
