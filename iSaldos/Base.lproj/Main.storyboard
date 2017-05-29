@@ -1343,10 +1343,10 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
             </objects>
             <point key="canvasLocation" x="1905" y="1505.2816901408451"/>
         </scene>
-        <!--View Controller-->
+        <!--Canal Social View Controller-->
         <scene sceneID="reO-Cl-fJj">
             <objects>
-                <viewController id="UTr-Yc-1jI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CanalSocialViewController" id="UTr-Yc-1jI" customClass="ISCanalSocialViewController" customModule="iSaldos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G19-oY-LqP"/>
                         <viewControllerLayoutGuide type="bottom" id="0gM-KY-jx0"/>
@@ -1378,9 +1378,6 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                             <constraint firstAttribute="trailing" secondItem="4mz-Be-Cct" secondAttribute="trailing" id="fTr-27-aYT"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="myTableView" destination="4mz-Be-Cct" id="0rr-gL-GWI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eUU-wY-QHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2318,7 +2315,7 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
         <!--NUEVA POST-->
         <scene sceneID="0Rq-8S-xJQ">
             <objects>
-                <tableViewController id="as0-1Y-Yib" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NuevoPostTableViewController" id="as0-1Y-Yib" customClass="ISNuevoPostTableViewController" customModule="iSaldos" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="epQ-8X-n7S">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2449,25 +2446,12 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="NUEVA POST" id="Kwu-3h-byW">
-                        <barButtonItem key="rightBarButtonItem" title="X" id="2gc-UP-QXj">
-                            <connections>
-                                <action selector="ocultarVC:" destination="as0-1Y-Yib" id="ywa-3Q-pDJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="X" id="2gc-UP-QXj"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="myDescripcionFotoTip" destination="ad9-um-Pyw" id="GUy-9e-yKw"/>
-                        <outlet property="myFechaHumanoPerfil" destination="8sX-go-ivj" id="uC2-17-V4M"/>
-                        <outlet property="myImagenPerfil" destination="qpa-Av-31X" id="pU0-mw-XGO"/>
-                        <outlet property="myImagenPost" destination="2cx-ZD-Msr" id="WaB-Ei-kxh"/>
-                        <outlet property="myNombreApellido" destination="Ib2-ZO-VDj" id="br1-8g-Hiz"/>
-                        <outlet property="myUsernamePerfil" destination="MWR-bg-ECF" id="m2c-QT-46H"/>
-                        <outlet property="ocultarImagenBTN" destination="ZP8-ur-zdh" id="6oW-a4-Lk7"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNo-AT-XQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4910.625" y="2900.7042253521126"/>
+            <point key="canvasLocation" x="4948" y="2901"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="XP4-LV-saR">
@@ -2527,7 +2511,7 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
         <!--Muro Social View Controller-->
         <scene sceneID="W2z-hB-lvE">
             <objects>
-                <viewController id="VFL-vq-OP0" customClass="ISMuroSocialViewController" customModule="iSaldos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MuroSocialViewController" id="VFL-vq-OP0" customClass="ISMuroSocialViewController" customModule="iSaldos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUe-Oy-1ll"/>
                         <viewControllerLayoutGuide type="bottom" id="Oq6-9e-UGc"/>
@@ -2559,9 +2543,6 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
                             <constraint firstAttribute="trailing" secondItem="7mO-TA-9jF" secondAttribute="trailing" id="lYn-r2-64Y"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="myTableView" destination="7mO-TA-9jF" id="c0b-tF-2wq"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyr-qE-xI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
