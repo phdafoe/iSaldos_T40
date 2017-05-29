@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="1095" y="1506.338028169014"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="MOF-oZ-yJK">
             <objects>
-                <viewController id="1TE-rV-7xR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ISHomeViewController" id="1TE-rV-7xR" customClass="ISHomeViewController" customModule="iSaldos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="agp-YI-CqW"/>
                         <viewControllerLayoutGuide type="bottom" id="m0R-Jg-tYc"/>
@@ -83,6 +83,9 @@
                     <navigationItem key="navigationItem" id="nDB-2v-sWa">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="arh-lP-zz4"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="arh-lP-zz4" id="bl2-od-71l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqa-EC-5B6" sceneMemberID="firstResponder"/>
             </objects>
@@ -2521,10 +2524,10 @@ Ante cualquier conflicto, la Ley aplicable será la Peruana y la jurisdicción c
             </objects>
             <point key="canvasLocation" x="4179" y="3634"/>
         </scene>
-        <!--View Controller-->
+        <!--Muro Social View Controller-->
         <scene sceneID="W2z-hB-lvE">
             <objects>
-                <viewController id="VFL-vq-OP0" sceneMemberID="viewController">
+                <viewController id="VFL-vq-OP0" customClass="ISMuroSocialViewController" customModule="iSaldos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fUe-Oy-1ll"/>
                         <viewControllerLayoutGuide type="bottom" id="Oq6-9e-UGc"/>
