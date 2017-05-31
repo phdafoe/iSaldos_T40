@@ -14,6 +14,7 @@ import ReachabilitySwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var reachability = Reachability()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -28,6 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(with: configuration)
         
         personalizaUI()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.reachabilityChanged(_:)),
+                                               name: ReachabilityChangedNotification,
+                                               object: reachability)
+        do{
+            try reachability?.startNotifier()
+        }catch{
+            print("No es posible iniciar la notificacion")
+        }
+        
         
         return true
         
@@ -54,6 +66,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    //MARK: - Utils
+    func reachabilityChanged(_ noti : Notification){
+        let reachability = noti.object as! Reachability
+        if reachability.isReachable{
+            if reachability.isReachableViaWiFi{
+                print("via wifi")
+            }else{
+                print("via 3G")
+            }
+        }else{
+            print("No hay red")
+        }
     }
     
     

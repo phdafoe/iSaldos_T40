@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ReachabilitySwift
 
 
 class ISSplashViewController: UIViewController {
@@ -15,7 +16,8 @@ class ISSplashViewController: UIViewController {
     //MARK: - Varibales locales
     var viewAnimator : UIViewPropertyAnimator!
     var desbloqueoGesto = Timer()
-    var reachability = Reachability()
+    var rea = Reachability()
+    
     
     
     //MARK: - IBOutlets
@@ -46,41 +48,15 @@ class ISSplashViewController: UIViewController {
         
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(self.reachabilityChanged(_:)),
-                                               name: ReachabilityChangedNotification,
-                                               object: reachability)
-        do{
-            try reachability?.startNotifier()
-        }catch{
-            print("No es posible iniciar la notificacion")
-        }
+        
+        
     }
     
     
 
     //MARK: - Utils
-    func reachabilityChanged(_ noti : Notification){
-        let reachability = noti.object as! Reachability
-        if reachability.isReachable{
-            if reachability.isReachableViaWiFi{
-                print("via wifi")
-            }else{
-                print("via 3G")
-            }
-        }else{
-            UIView.animate(withDuration: 0.2,
-                           animations: { 
-                            self.myImageSplashSaldos.layer.opacity = 1
-            })
-            print("No hay red")
-        }
-    }
-    
-    
     func manejadorAutomatico(){
         let logoAnimation = UIViewPropertyAnimator(duration: 0.5,
                                                    curve: .easeInOut) { 
