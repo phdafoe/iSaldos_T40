@@ -75,7 +75,6 @@ class ISConfiguracionPerfilTableViewControler: UITableViewController {
                                         if let imageDataDes = imageData{
                                             let imageDataFinal = UIImage(data: imageDataDes)
                                             self.myImagenPerfil.image = imageDataFinal
-                                            
                                         }
                                     }
                                 })
@@ -114,8 +113,6 @@ class ISConfiguracionPerfilTableViewControler: UITableViewController {
     }
     
     func updatePhoto(){
-        
-        
         let imageProfile = PFObject(className: "ImageProfile")
         imageProfile.objectId = objectIdFoto
         let imageDataprofile = UIImageJPEGRepresentation(myImagenPerfil.image!, 0.5)
@@ -132,7 +129,7 @@ class ISConfiguracionPerfilTableViewControler: UITableViewController {
                 self.myApellidoTF.text = ""
                 self.myEmailTF.text = ""
                 self.myMovilTF.text = ""
-                self.myImagenPerfil.image = #imageLiteral(resourceName: "placeholderPerson")
+                self.myImagenPerfil.image = #imageLiteral(resourceName: "placeholder")
             }else{
                 
             }

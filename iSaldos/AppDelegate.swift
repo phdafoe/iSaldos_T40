@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ReachabilitySwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

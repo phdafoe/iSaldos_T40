@@ -14,6 +14,7 @@ class ISLoginViewController: UIViewController {
     
     //MARK: - Variables locales
     var player : AVPlayer!
+    var splash : UIImageView?
     
     
     //MARK: - IBOutlets
@@ -41,6 +42,7 @@ class ISLoginViewController: UIViewController {
         super.viewDidLoad()
         muestraVideo()
         myActivityIndicator.isHidden = true
+    
 
         // Do any additional setup after loading the view.
     }
