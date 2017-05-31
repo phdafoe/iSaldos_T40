@@ -95,7 +95,27 @@ class ISCanalSocialViewController: UIViewController {
     
     
     func dataFromParse(){
-        
+        let queryDataPosteos = PFQuery(className: "PostImageNetwork")
+        queryDataPosteos.order(byDescending: "createdAt")
+        queryDataPosteos.findObjectsInBackground { (objcData, errorData) in
+            if errorData == nil{
+                if let objcDataDes = objcData{
+                    self.userModel.removeAll()
+                    for c_objPost in objcDataDes{
+                        let objPostFinal = UserPostImage(pNombre: c_objPost["nombre"] as! String,
+                                                         pApellido: c_objPost["apellido"] as! String,
+                                                         pUsername: c_objPost["username"] as! String,
+                                                         pImageProfile: c_objPost["imageFilePerfil"] as! PFFile,
+                                                         pImagePost: c_objPost["imageFilePost"] as! PFFile,
+                                                         pfechaCreacion: c_objPost.createdAt!,
+                                                         pDescripcionPost: c_objPost["descripcionImagen"] as! String)
+                        self.userModel.append(objPostFinal)
+                    }
+                    self.myTableView.reloadData()
+                    self.customRefreshControl.endRefreshing()
+                }
+            }
+        }
     }
     
     
@@ -141,6 +161,27 @@ extension ISCanalSocialViewController : UITableViewDelegate, UITableViewDataSour
         }else{
             let postCell = myTableView.dequeueReusableCell(withIdentifier: "ISPostCustomCell", for: indexPath) as! ISPostCustomCell
             
+            let model = userModel[indexPath.row]
+            
+            postCell.myFechaPost.text = dameFecha(model.fechaCreacion!)
+            postCell.myNombreYApellido.text = model.nombre! + " " + model.apellido!
+            postCell.myUsername.text = "@" + (PFUser.current()?.username)!
+            
+            model.imageProfile?.getDataInBackground(block: { (result, error) in
+                if error == nil{
+                    let imageData = UIImage(data: result!)
+                    postCell.myImagenPerfil.image = imageData
+                }
+            })
+            
+            model.imagePost?.getDataInBackground(block: { (result, error) in
+                if error == nil{
+                    let imageData = UIImage(data: result!)
+                    postCell.myImagenPost.image = imageData
+                }
+            })
+            postCell.myDescripcionPost.text = model.descripcionPost
+            
             return postCell
         }
     }
@@ -149,9 +190,14 @@ extension ISCanalSocialViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
             return 305
-        }else{
-            return 450
+        }else if indexPath.section == 1{
+            return UITableViewAutomaticDimension
         }
+        return CGFloat()
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     

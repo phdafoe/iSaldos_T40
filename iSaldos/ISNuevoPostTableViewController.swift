@@ -238,7 +238,7 @@ extension ISNuevoPostTableViewController : UIImagePickerControllerDelegate, UINa
         dismiss(animated: true, completion: nil)
     }
     
-}//FIN DE LA EXTENSIOn
+}//FIN DE LA EXTENSION
 
 
 extension ISNuevoPostTableViewController : UITextViewDelegate{
@@ -267,9 +267,6 @@ extension ISNuevoPostTableViewController : UITextViewDelegate{
         UIView.setAnimationsEnabled(true)
         tableView.setContentOffset(currentOffset, animated: false)
     }
-    
-    
-    
 }
 
 

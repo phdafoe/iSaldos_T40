@@ -48,6 +48,13 @@ public func fechaNasa(_ fecha : Date) -> String{
     return dateFormatter.string(from: fecha)
 }
 
+public func dameFecha(_ fecha : Date) -> String{
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "EEE, dd MMM"
+    dateFormatter.locale = Locale(identifier: "es_ES")
+    return dateFormatter.string(from: fecha)
+}
+
 
 
 

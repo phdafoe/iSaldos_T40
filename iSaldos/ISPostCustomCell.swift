@@ -9,6 +9,14 @@
 import UIKit
 
 class ISPostCustomCell: UITableViewCell {
+    
+    @IBOutlet weak var myImagenPerfil: UIImageView!
+    @IBOutlet weak var myUsername: UILabel!
+    @IBOutlet weak var myNombreYApellido: UILabel!
+    @IBOutlet weak var myFechaPost: UILabel!
+    @IBOutlet weak var myDescripcionPost: UILabel!
+    @IBOutlet weak var myImagenPost: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
