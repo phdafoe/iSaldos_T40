@@ -79,6 +79,7 @@ class ISCanalSocialViewController: UIViewController {
                                         if let imageDataDes = imageData{
                                             let imageDataFinal = UIImage(data: imageDataDes)
                                             self.imagenPerfil = imageDataFinal
+                                            self.myTableView.reloadData()
                                         }
                                     }
                                 })
@@ -97,6 +98,7 @@ class ISCanalSocialViewController: UIViewController {
     func dataFromParse(){
         let queryDataPosteos = PFQuery(className: "PostImageNetwork")
         queryDataPosteos.order(byDescending: "createdAt")
+        queryDataPosteos.whereKey("username", equalTo: (PFUser.current()?.username)!)
         queryDataPosteos.findObjectsInBackground { (objcData, errorData) in
             if errorData == nil{
                 if let objcDataDes = objcData{
